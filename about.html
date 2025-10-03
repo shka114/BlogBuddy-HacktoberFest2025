@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - BlogBuddy</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">📝 BlogBuddy</div>
+        <nav class="nav">
+            <a href="index.html">Home</a>
+            <a href="about.html" class="active">About Us</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+
+        <div class="user-controls">
+            <a href="login.html" class="btn" id="loginLink">Login</a>
+            <a href="register.html" class="btn" id="registerLink">Register</a>
+            <div class="profile-menu" id="profileMenu">
+                <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Profile" class="profile-icon"
+                    id="profileIcon">
+                <div class="dropdown" id="profileDropdown">
+                    <a href="my-posts.html">👤 My Posts</a>
+                    <a href="settings.html">⚙️ Settings</a>
+                    <a href="#" id="logoutBtn">🚪 Logout</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section with Animation -->
+    <section class="hero about-hero">
+        <h1 class="fade-in">About BlogBuddy</h1>
+        <p class="fade-in delay-1">Empowering voices. Connecting stories. Creating a vibrant community of bloggers.</p>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="mission container fade-in">
+        <h2>Our Mission</h2>
+        <p>To empower individuals to share their voice, connect through stories, and foster a creative and supportive community of writers. At BlogBuddy, everyone’s story matters.</p>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values container fade-in delay-1">
+        <h2>Our Core Values</h2>
+        <div class="cards">
+            <div class="card">
+                <h3>Creativity</h3>
+                <p>We encourage free expression and unique perspectives in every blog post.</p>
+            </div>
+            <div class="card">
+                <h3>Community</h3>
+                <p>Connecting people through stories and fostering meaningful engagement.</p>
+            </div>
+            <div class="card">
+                <h3>Integrity</h3>
+                <p>We maintain a trustworthy environment where voices are respected and valued.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team container fade-in delay-2">
+        <h2>Meet the Team</h2>
+        <div class="cards">
+            <div class="card">
+                <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Team Member">
+                <h3>Jane Doe</h3>
+                <p>Co-founder & Head of Community</p>
+            </div>
+            <div class="card">
+                <img src="https://randomuser.me/api/portraits/men/76.jpg" alt="Team Member">
+                <h3>John Smith</h3>
+                <p>Lead Developer & Product Designer</p>
+            </div>
+            <div class="card">
+                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Team Member">
+                <h3>Mary Lee</h3>
+                <p>Content Strategist & Writer</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer fade-in delay-3">
+        <p>BlogBuddy © 2025</p>
+    </footer>
+
+    <!-- Scroll Animation Script -->
+    <script>
+        const faders = document.querySelectorAll('.fade-in');
+        const appearOptions = { threshold: 0.2, rootMargin: "0px 0px -50px 0px" };
+        const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add('appear');
+                observer.unobserve(entry.target);
+            });
+        }, appearOptions);
+
+        faders.forEach(fader => { appearOnScroll.observe(fader); });
+    </script>
+</body>
+
+</html>

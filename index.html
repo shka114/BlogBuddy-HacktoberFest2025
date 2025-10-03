@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlogBuddy</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">📝 BlogBuddy</div>
+
+        <nav class="nav">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+
+        <div class="user-controls">
+            <!-- Login/Register buttons -->
+            <a href="login.html" class="btn" id="loginLink">Login</a>
+            <a href="register.html" class="btn" id="registerLink">Register</a>
+
+            <!-- Profile menu (hidden by default) -->
+            <div class="profile-menu" id="profileMenu">
+                <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Profile" class="profile-icon"
+                    id="profileIcon">
+                <div class="dropdown" id="profileDropdown">
+                    <a href="profile.html">👤 My Profile</a>
+                    <a href="my-posts.html">📝 My Posts</a>
+                    <a href="liked-posts.html">⭐ Liked Posts</a>
+                    <a href="settings.html">⚙️ Settings</a>
+                    <a href="#" id="logoutBtn">🚪 Logout</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Welcome to BlogBuddy</h1>
+        <p>Share your thoughts, ideas, and stories in a simple way.</p>
+    </section>
+
+    <!-- Create Post Section -->
+    <section class="create-post">
+        <h2>Create a New Post</h2>
+        <form id="blogForm">
+            <input type="text" id="title" placeholder="Post Title" required>
+            <textarea id="content" placeholder="Write your content..." rows="6" required></textarea>
+            <button type="submit">Publish</button>
+        </form>
+    </section>
+
+    <!-- Blog Feed Section -->
+    <section class="blog-feed">
+        <h2>Latest Posts</h2>
+        <div id="postsList" class="posts"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>BlogBuddy © 2025</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
