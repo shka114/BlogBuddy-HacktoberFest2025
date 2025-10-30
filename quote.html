@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quote of the Day</title>
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(120deg, #ff9966, #ff5e62);
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+.quote-box {
+  background: rgba(255,255,255,0.1);
+  padding: 30px;
+  border-radius: 15px;
+  max-width: 500px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+h2 { margin-bottom: 15px; }
+p {
+  font-size: 1.2em;
+  font-style: italic;
+}
+button {
+  margin-top: 20px;
+  padding: 10px 25px;
+  border: none;
+  background: white;
+  color: #ff5e62;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+}
+button:hover { background: #ffd5c2; }
+</style>
+</head>
+<body>
+<div class="quote-box">
+  <h2>💬 Quote of the Day</h2>
+  <p id="quote"></p>
+  <button onclick="newQuote()">New Quote</button>
+</div>
+
+<script>
+const quotes = [
+  "The best way to get started is to quit talking and begin doing. – Walt Disney",
+  "Dream big and dare to fail. – Norman Vaughan",
+  "Don’t watch the clock; do what it does. Keep going. – Sam Levenson",
+  "Your limitation—it’s only your imagination.",
+  "Push yourself, because no one else is going to do it for you."
+];
+function newQuote() {
+  const q = quotes[Math.floor(Math.random()*quotes.length)];
+  document.getElementById('quote').textContent = q;
+}
+newQuote();
+</script>
+</body>
+</html>
